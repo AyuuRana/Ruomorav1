@@ -1,0 +1,28 @@
+{
+  "entities": {
+    "UserProfile": {
+      "collectionName": "users",
+      "fields": {
+        "name": { "type": "string" },
+        "businessName": { "type": "string" },
+        "email": { "type": "string" },
+        "createdAt": { "type": "timestamp" }
+      }
+    },
+    "Quote": {
+      "collectionName": "quotes",
+      "fields": {
+        "userId": { "type": "string" },
+        "customerName": { "type": "string" },
+        "phone": { "type": "string" },
+        "amount": { "type": "number" },
+        "quoteDate": { "type": "string" },
+        "followUpDate": { "type": "string" },
+        "status": { "type": "string" },
+        "notes": { "type": "string" },
+        "createdAt": { "type": "timestamp" },
+        "updatedAt": { "type": "timestamp" }
+      }
+    }
+  }
+}

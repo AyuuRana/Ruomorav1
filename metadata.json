@@ -1,0 +1,7 @@
+{
+  "name": "Ruomora",
+  "description": "Quote follow-up tracker for freelancers, agencies, and small service businesses. Never forget a quote follow-up again.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

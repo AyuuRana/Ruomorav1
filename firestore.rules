@@ -1,0 +1,22 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Users can only read and write their own user profile document.
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Quotes collection rules
+    match /quotes/{quoteId} {
+      // User can create a quote if they are authenticated and set their own userId
+      allow create: if request.auth != null 
+                    && request.resource.data.userId == request.auth.uid
+                    && request.resource.data.status in ['waiting', 'followed_up', 'won', 'lost'];
+
+      // User can read, update, or delete only quotes belonging to them
+      allow read, update, delete: if request.auth != null 
+                                  && resource.data.userId == request.auth.uid;
+    }
+  }
+}
